@@ -8,7 +8,7 @@ import QuillEditor from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import React from 'react';
 import styles from "../index.css";
-
+import {collection} from "firebase/firestore";
 import db from "../firebase"
 
 // const Editor = () => {
@@ -151,7 +151,7 @@ class Editor extends React.Component {
     }
 
     else {
-        const docRef = await addDoc(doc(db, "articles"), {
+        const docRef = await addDoc(collection(db, "articles"), {
             title: this.state.title,
             content: this.state.blog,
         });
