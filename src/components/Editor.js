@@ -150,13 +150,13 @@ class Editor extends React.Component {
       });
     }
 
-    // else {
-    //     const docRef = await addDoc(doc(db, "articles"), {
-    //         title: this.state.title,
-    //         content: this.state.blog,
-    //     });
-    //     this.state.id = docRef.id;
-    // }
+    else {
+        const docRef = await addDoc(doc(db, "articles"), {
+            title: this.state.title,
+            content: this.state.blog,
+        });
+        this.state.id = docRef.id;
+    }
 
     window.location.href='/blog/' + this.state.id;
   };
